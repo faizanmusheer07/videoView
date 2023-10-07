@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">VideoView</string>
+    <string name="play">Play\n</string>
+    <string name="show_hangout">Show HangOut</string>
+</resources>
