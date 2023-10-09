@@ -1,5 +1,8 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.videoview
 
+import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
@@ -30,6 +33,11 @@ class MainActivity : AppCompatActivity() {
 
         val videoPath = "android.resource://" + packageName + "/" + R.raw.glaciares
         videoView.setVideoURI(Uri.parse(videoPath))
+        val sharedPreferences = getSharedPreferences("my_setting", Context.MODE_PRIVATE)
+        val usernameEditText = sharedPreferences.getString("username", "")
+        val emailEditText = sharedPreferences.getString("email", "")
+        val passwordEditText = sharedPreferences.getString("password", "")
+        val classEditText = sharedPreferences.getString("classEditText", "")
 
         videoView.setOnPreparedListener(object : MediaPlayer.OnPreparedListener {
             override fun onPrepared(mp: MediaPlayer) {
